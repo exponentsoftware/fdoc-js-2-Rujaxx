@@ -50,8 +50,10 @@ const scoresGreaterThan85 = (array) => {
 
 console.log(scoresGreaterThan85(users))
 
+//Always convert input
+
 const addUser =(user)=>{
-	let User = users.find(User => User.name === user.name);
+	let User = users.find(User => User.name.toLowerCase() === user.name.toLowerCase());
 	if(!User){
 		users.push(user);
         console.log(users)
@@ -70,7 +72,7 @@ let x = {
 addUser(x)
 
 const addUserSkill = (user) =>{
-    let User = users.find(User => User.name === user.name);
+    let User = users.find(User => User.name.toLowerCase() === user.name.toLowerCase());
     if(User){
         User.skills.push(...user.skills)
         console.log("added")
@@ -90,7 +92,7 @@ let x = {
 addUserSkill(x)
 
 const editUser = (user) => {
-    let User = users.find( User => User.name === user.name)
+    let User = users.find( User.name.toLowerCase() === user.name.toLowerCase())
     if(User){
         User.age = user.age
         User.scores = user.scores
